@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    background: rgb(178, 63, 251);
+    background: radial-gradient(circle, rgb(188, 127, 225) 0%, rgb(104, 96, 176) 100%);
+    min-height: 100vh;
+}
+
+.App {
+    text-align: justify;
+    color: black;
+}
