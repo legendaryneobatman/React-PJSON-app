@@ -11,7 +11,7 @@ const Pagination = (props) => {
   ))
 
   return (
-      <nav className={"d-flex justify-content-center"} aria-label="Page navigation example">
+      <nav className={"d-flex justify-content-center m-3"} aria-label="Page navigation example">
         <ul className="pagination ">
           {paginationItems}
         </ul>

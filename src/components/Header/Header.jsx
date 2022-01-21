@@ -10,8 +10,8 @@ const Header = () => {
           </a>
 
           <ul className="nav nav-pills">
-            <li className="nav-item"><a href="#" className="nav-link active" aria-current="page">About</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">Posts</a></li>
+            <li className="nav-item"><a href={"/about"} className="nav-link active m-1" aria-current="page">About</a></li>
+            <li className="nav-item"><a href={"/posts"}  className="nav-link m-1">Posts</a></li>
           </ul>
         </header>
       </div>
