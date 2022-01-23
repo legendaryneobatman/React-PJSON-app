@@ -4,14 +4,19 @@ import PostService from "../API/PostService";
 import Pagination from "../UI/Pagination/Pagination";
 import {getPageCount} from "../Utilities/pages";
 import Spinner from "../UI/Spinner/Spinner";
+import {useNavigate} from "react-router-dom";
+import {useQuery} from "../../hooks/useQuery";
 
 const PostList = () => {
+  const query = useQuery()
+  const history = useNavigate()
+  const page = query.get('page') ? Number(query.get('page')) : 1
   const [posts, setPosts] = useState([]); //  посты
-  const [totalPages, setTotalPages] = useState(0) // вычисляемое количество страниц
-  const [limit, setLimit] = useState(10) // лимит вывода постов
-  const [page, setPage] = useState(1) // текущая страница
-  const [loader, setLoader] = useState(false)
 
+  const [totalPages, setTotalPages] = useState(0) // вычисляемое количество страниц
+  const limit = 10// лимит вывода постов
+  //const [page, setPage] = useState(1) // текущая страница
+  const [loader, setLoader] = useState(false)
   const postsMap = posts && !loader ? (posts.map((post) => (<Post key={post.id} post={post}/>))) : (<Spinner/>);
 
   useEffect(() => {
@@ -26,10 +31,12 @@ const PostList = () => {
       const totalCount = response.headers['x-total-count']
       setTotalPages(getPageCount(totalCount, limit))
       setLoader(false)
-    }, 1000)
-
+    }, 500)
   }
 
+  const setPage = (page) => {
+    history(`/posts?page=${page}`)
+  }
   return (
       <div className={"container"}>
         <div className="row">
