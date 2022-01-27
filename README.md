@@ -1,6 +1,7 @@
 # Description
 
 Purpose of this project is to present data, which is been taken from (https://jsonplaceholder.typicode.com/). 
+Project is created for educational reasons in practice with React.JS library and ecosystem, exclude redux.
 
 # Getting Started with Create React App
 
