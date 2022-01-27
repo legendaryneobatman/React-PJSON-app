@@ -1,3 +1,7 @@
+# Description
+
+Purpose of this project is to present data, which is been taken from (https://jsonplaceholder.typicode.com/). 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
